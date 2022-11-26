@@ -4,10 +4,10 @@
   "description": "CPSC 349 - Fall 2022 - Project 3",
   "main": "index.js",
   "scripts": {
-    "browser-sync": "browser-sync start --server --files '*.html,*.css,*.js'",
+    "browser": "browser-sync start --server --startPath /src/index.html --files '*.html,*.css,*.js'",
     "tailwind": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "test": "standard && vnu --skip-non-html --Werror *.html",
-    "start": "npm-run-all --parallel browser-sync tailwind"
+    "start": "npm-run-all --parallel browser tailwind"
   },
   "repository": {
     "type": "git",
