@@ -12,7 +12,6 @@ function clicked(event) {
 
 function checkWinner() {
   let board = document.getElementById("board").querySelectorAll(".p-4")
-  // console.log(board)
   let states = []
 
   for (let i = 0; i < 3; i++) {
@@ -29,7 +28,6 @@ function checkWinner() {
     }
   }
 
-  // console.log(states)
   // TODO: replace alerts with function to wipe board and announce winner
 
   for (let i = 0; i < 3; i++) {
