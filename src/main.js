@@ -5,8 +5,8 @@ function clicked(event) {
 
   if (button.textContent !== 'X' && button.textContent !== 'O') {
     button.textContent = playerTurn ? 'X' : 'O'
-    checkWinner()
     playerTurn = !playerTurn
+    checkWinner()
   }
 }
 
@@ -32,20 +32,20 @@ function checkWinner() {
 
   for (let i = 0; i < 3; i++) {
     if (checkLine(states[i])) {
-      alert(`Player ${states[i][0]}`);
+      alert(`Player ${states[i][0]} wins`);
     }
 
     if (checkLine([states[0][i], states[1][i], states[2][i]])) {
-      alert(`Player ${states[0][i]}`);
+      alert(`Player ${states[0][i]} wins`);
     }
   }
 
   if (checkLine([states[0][0], states[1][1], states[2][2]])) {
-    alert(`Player ${states[0][0]}`);
+    alert(`Player ${states[0][0]} wins`);
   }
 
   if (checkLine([states[0][2], states[1][1], states[2][0]])) {
-    alert(`Player ${states[0][2]}`);
+    alert(`Player ${states[0][2]} wins`);
   }
 }
 

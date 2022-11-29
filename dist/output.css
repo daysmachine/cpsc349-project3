@@ -3546,11 +3546,6 @@ textarea.form-control.is-invalid {
   border-radius: 0.375rem;
 }
 
-.bg-red-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 202 202 / var(--tw-bg-opacity));
-}
-
 .bg-red-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
@@ -3558,11 +3553,6 @@ textarea.form-control.is-invalid {
 
 .p-4 {
   padding: 1rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 
 .text-3xl {
