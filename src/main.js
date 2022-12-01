@@ -1,7 +1,8 @@
-playerTurn = true
+let playerTurn = true
+let disable = true
 
-function clicked(event) {
-  let button = event.originalTarget;
+function clicked (event) {
+  const button = event.originalTarget
 
   if (button.textContent !== 'X' && button.textContent !== 'O') {
     button.textContent = playerTurn ? 'X' : 'O'
@@ -10,17 +11,17 @@ function clicked(event) {
   }
 }
 
-function checkWinner() {
-  let board = document.getElementById("board").querySelectorAll(".p-4")
-  let states = []
+function checkWinner () {
+  const board = document.getElementById('board').querySelectorAll('.bg-red-500')
+  const states = []
 
   for (let i = 0; i < 3; i++) {
     states.push([])
     for (let j = 0; j < 3; j++) {
-      let button = board[i * 3 + j];
-      if (button.textContent == 'X') {
+      const button = board[i * 3 + j]
+      if (button.textContent === 'X') {
         states[i].push(1)
-      } else if (button.textContent == 'O') {
+      } else if (button.textContent === 'O') {
         states[i].push(0)
       } else {
         states[i].push(-1)
@@ -28,33 +29,74 @@ function checkWinner() {
     }
   }
 
-  // TODO: replace alerts with function to wipe board and announce winner
-
   for (let i = 0; i < 3; i++) {
     if (checkLine(states[i])) {
-      alert(`Player ${states[i][0]} wins`);
+      endGame(states[i][0])
+      return
     }
 
     if (checkLine([states[0][i], states[1][i], states[2][i]])) {
-      alert(`Player ${states[0][i]} wins`);
+      endGame(states[0][i])
+      return
     }
   }
 
   if (checkLine([states[0][0], states[1][1], states[2][2]])) {
-    alert(`Player ${states[0][0]} wins`);
+    endGame(states[0][0])
+    return
   }
 
   if (checkLine([states[0][2], states[1][1], states[2][0]])) {
-    alert(`Player ${states[0][2]} wins`);
+    endGame(states[0][2])
+    return
+  }
+
+  if (!states.some(row => row.includes(-1))) {
+    alert("Cat's game! No one wins")
+    clearBoard()
   }
 }
 
-function checkLine(line) {
+function checkLine (line) {
   return line[0] !== -1 && line[0] === line[1] && line[1] === line[2]
 }
 
-const buttons = document.querySelectorAll('button');
+function enableBoard (bool) {
+  const buttons = document.getElementById('board').querySelectorAll('.bg-red-500')
+  for (const button of buttons) {
+    button.disabled = !bool
+  }
+}
+
+function clearBoard () {
+  const board = document.getElementById('board').querySelectorAll('.bg-red-500')
+  board.forEach(s => { s.textContent = '' })
+}
+
+function startGame () {
+  enableBoard(true)
+}
+
+function endGame (winner) {
+  alert(`Player ${winner} wins`)
+  clearBoard()
+  enableBoard(false)
+}
+
+function resetGame () {
+  clearBoard()
+  enableBoard(true)
+}
+
+const buttons = document.getElementById('board').querySelectorAll('.bg-red-500')
 
 for (const button of buttons) {
-  button.addEventListener('click', clicked);
+  button.addEventListener('click', clicked)
+  button.disabled = true
 }
+
+const start = document.getElementById('start')
+const reset = document.getElementById('reset')
+
+start.addEventListener('click', startGame)
+reset.addEventListener('click', resetGame)
