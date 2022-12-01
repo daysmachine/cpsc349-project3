@@ -11,25 +11,31 @@
 </head>
 
 <h2 class="font-medium leading-tight text-4xl mt-0 mb-2 text-red-600  flex justify-center">TicTacToe</h2>
-<h4 class="font-medium leading-tight text-1xl mt-0 mb-2 text-blue-600 flex justify-center">Group Members:  <a href="https://github.com/daysmachine"> Daisy Catalan</a>,<a href="https://github.com/nicholascsuf">Nicholas Harney</a>, <a href="https://github.com/anan93636369">Jin Lu</a>,<a href="https://github.com/Peekoe">Charlie Taylor </a></h4>
+<h4 class="font-medium leading-tight text-1xl mt-0 mb-2 text-blue-600 flex justify-center">
+  Group Members:&nbsp;<a href="https://github.com/daysmachine">Daisy Catalan</a>,&nbsp;<a href="https://github.com/nicholascsuf">Nicholas Harney</a>,&nbsp;<a href="https://github.com/anan93636369">Jin Lu</a>,&nbsp;<a href="https://github.com/Peekoe">Charlie Taylor</a>
+</h4>
 
-<body class="">
-    <div id="board" class="flex justify-center items-center w-screen h-screen">
-        <div class="grid grid-cols-3 grid-rows-3 gap-3 w-3/4 h-3/4 text-3xl text-white">
-            <button id="0" class="bg-red-500 p-4 rounded-md"></button>
-            <button id="1" class="bg-red-500 p-4 rounded-md"></button>
-            <button id="2" class="bg-red-500 p-4 rounded-md"></button>
-            <button id="3" class="bg-red-500 p-4 rounded-md"></button>
-            <button id="4" class="bg-red-500 p-4 rounded-md"></button>
-            <button id="5" class="bg-red-500 p-4 rounded-md"></button>
-            <button id="6" class="bg-red-500 p-4 rounded-md"></button>
-            <button id="7" class="bg-red-500 p-4 rounded-md"></button>
-            <button id="8" class="bg-red-500 p-4 rounded-md"></button>
+<body class="flex justify-center items-center flex-col w-screen h-screen">
+    <div id="board" class="flex justify-center items-center w-3/4 h-3/4">
+        <div class="grid grid-cols-3 grid-rows-3 gap-3 w-full h-full text-3xl text-white p-4">
+            <button id="0" class="bg-red-500 rounded-md"></button>
+            <button id="1" class="bg-red-500 rounded-md"></button>
+            <button id="2" class="bg-red-500 rounded-md"></button>
+            <button id="3" class="bg-red-500 rounded-md"></button>
+            <button id="4" class="bg-red-500 rounded-md"></button>
+            <button id="5" class="bg-red-500 rounded-md"></button>
+            <button id="6" class="bg-red-500 rounded-md"></button>
+            <button id="7" class="bg-red-500 rounded-md"></button>
+            <button id="8" class="bg-red-500 rounded-md"></button>
         </div>
     </div>
-    <button type="button" class="mb-2 w-full inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-normal uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Start Game</button>
-    <button type="button" class="w-full inline-block px-6 py-2 border-2 border-blue-600 text-blue-600 font-medium text-xs leading-normal uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
-    Reset Game</button>
+  
+  <button id="start" type="button" class="mb-2 w-1/2 inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-normal uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+    Start Game
+  </button>
+  <button id="reset" type="button" class="w-1/2 inline-block px-6 py-2 border-2 border-blue-600 text-blue-600 font-medium text-xs leading-normal uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
+    Reset Game
+  </button>
 
 </body>
 

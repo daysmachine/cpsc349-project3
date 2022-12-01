@@ -1,4 +1,5 @@
 let playerTurn = true
+let disable = true
 
 function clicked (event) {
   const button = event.originalTarget
@@ -11,7 +12,7 @@ function clicked (event) {
 }
 
 function checkWinner () {
-  const board = document.getElementById('board').querySelectorAll('.p-4')
+  const board = document.getElementById('board').querySelectorAll('.bg-red-500')
   const states = []
 
   for (let i = 0; i < 3; i++) {
@@ -50,7 +51,6 @@ function checkWinner () {
     return
   }
 
-  console.log(states)
   if (!states.some(row => row.includes(-1))) {
     alert("Cat's game! No one wins")
     clearBoard()
@@ -61,18 +61,42 @@ function checkLine (line) {
   return line[0] !== -1 && line[0] === line[1] && line[1] === line[2]
 }
 
-function endGame (winner) {
-  alert(`Player ${winner} wins`)
-  clearBoard()
+function enableBoard (bool) {
+  const buttons = document.getElementById('board').querySelectorAll('.bg-red-500')
+  for (const button of buttons) {
+    button.disabled = !bool
+  }
 }
 
 function clearBoard () {
-  const board = document.getElementById('board').querySelectorAll('.p-4')
+  const board = document.getElementById('board').querySelectorAll('.bg-red-500')
   board.forEach(s => { s.textContent = '' })
 }
 
-const buttons = document.querySelectorAll('button')
+function startGame () {
+  enableBoard(true)
+}
+
+function endGame (winner) {
+  alert(`Player ${winner} wins`)
+  clearBoard()
+  enableBoard(false)
+}
+
+function resetGame () {
+  clearBoard()
+  enableBoard(true)
+}
+
+const buttons = document.getElementById('board').querySelectorAll('.bg-red-500')
 
 for (const button of buttons) {
   button.addEventListener('click', clicked)
+  button.disabled = true
 }
+
+const start = document.getElementById('start')
+const reset = document.getElementById('reset')
+
+start.addEventListener('click', startGame)
+reset.addEventListener('click', resetGame)

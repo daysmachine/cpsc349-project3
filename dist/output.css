@@ -3494,6 +3494,10 @@ textarea.form-control.is-invalid {
   height: 100%;
 }
 
+.h-2\/4 {
+  height: 50%;
+}
+
 .w-screen {
   width: 100vw;
 }
@@ -3504,6 +3508,14 @@ textarea.form-control.is-invalid {
 
 .w-full {
   width: 100%;
+}
+
+.w-2\/4 {
+  width: 50%;
+}
+
+.w-1\/2 {
+  width: 50%;
 }
 
 .transform {
@@ -3583,6 +3595,10 @@ textarea.form-control.is-invalid {
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
 }
 
 .px-6 {
