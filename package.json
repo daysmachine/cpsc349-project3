@@ -6,7 +6,7 @@
   "scripts": {
     "browser": "browser-sync start --server --startPath /src/index.html --files '**/*.html, **/*.css, **/*.js'",
     "tailwind": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "test": "standard && vnu --skip-non-html --Werror *.html",
+    "test": "standard && vnu --skip-non-html --Werror **/*.html",
     "start": "npm-run-all --parallel browser tailwind"
   },
   "repository": {
