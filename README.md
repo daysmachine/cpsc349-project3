@@ -1,4 +1,4 @@
-# [CPSC 349 Project 3](github website)
+# [CPSC 349 Project 3 Tic-Tac-Toe](https://daysmachine.github.io/cpsc349-project3/)
 
 [CPSC 349 - Fall 2022 - Project 3 - Client-Side JavaScript](https://docs.google.com/document/d/1s1E9kEgW-NRR-mgy8LJPD5S1-c2o2_iaM2qmUlGY0AM/edit)
 
