@@ -1,5 +1,6 @@
+/* global localStorage */
+
 let playerTurn = true
-const disable = true
 
 function clicked (event) {
   const button = event.target
@@ -55,7 +56,7 @@ function checkWinner () {
   }
 
   if (!states.some(row => row.includes(-1))) {
-    alert("Cat's game! No one wins")
+    window.alert("Cat's game! No one wins")
     clearBoard()
   }
 }
@@ -84,7 +85,7 @@ function startGame () {
 }
 
 function endGame (winner) {
-  alert(`Player ${winner} wins`)
+  window.alert(`Player ${winner} wins`)
   clearBoard()
   enableBoard(false)
 }
@@ -118,9 +119,9 @@ if (localStorage.__GAMESTATES__ && localStorage.__PLAYERTURN__) {
   const buttons = document.getElementsByClassName('rounded-md')
 
   for (let i = 0; i < gameStates.length; i++) {
-    if (gameStates[i] == 1) {
+    if (gameStates[i] === 1) {
       buttons[i].textContent = 'X'
-    } else if (gameStates[i] == 0) {
+    } else if (gameStates[i] === 0) {
       buttons[i].textContent = 'O'
     }
   }
