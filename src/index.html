@@ -10,17 +10,19 @@
   <script type="module" src="main.js"></script>
 </head>
 
-<body>
+<body class="bg-gray-800">
 
-  <h2 class="font-medium leading-tight text-4xl mt-0 mb-2 text-white  flex justify-center">TicTacToe</h2>
-  <h4 class="font-medium leading-tight text-1xl mt-0 mb-2 text-white flex justify-center">
-    Group Members:&nbsp;<a href="https://github.com/daysmachine">Daisy Catalan</a>,&nbsp;<a
-      href="https://github.com/nicholascsuf">Nicholas Harney</a>,&nbsp;<a href="https://github.com/anan93636369">Jin
-      Lu</a>,&nbsp;<a href="https://github.com/Peekoe">Charlie Taylor</a>
-  </h4>
+  <header class="h-1/6">
+    <h2 class="font-medium leading-tight text-4xl mt-0 mb-2 text-white  flex justify-center">TicTacToe</h2>
+    <h4 class="font-medium leading-tight text-1xl mt-0 mb-2 text-white flex justify-center">
+      Group Members:&nbsp;<a href="https://github.com/daysmachine">Daisy Catalan</a>,&nbsp;<a
+        href="https://github.com/nicholascsuf">Nicholas Harney</a>,&nbsp;<a href="https://github.com/anan93636369">Jin
+        Lu</a>,&nbsp;<a href="https://github.com/Peekoe">Charlie Taylor</a>
+    </h4>
+  </header>
 
-  <div class="flex justify-center items-center flex-col w-screen h-screen bg-gray-800 font-sans">
-    <div id="board" class="flex justify-center items-center w-3/4 h-3/4">
+  <main class="flex justify-center items-center flex-col font-sans">
+    <div id="board" class="flex justify-center items-center w-3/4 h-3/4 no-shrink">
       <div class="grid grid-cols-3 grid-rows-3 gap-3 w-full h-full text-3xl text-white p-4">
         <button id="0" class="bg-red-500 rounded-md"></button>
         <button id="1" class="bg-red-500 rounded-md"></button>
@@ -43,11 +45,11 @@
       Reset Game
     </button>
 
-  </div>
+  </main>
 
   <footer class="footer footer-center p-4 bg-base-300 text-base-content">
     <div>
-      <p class="text-white">Copyright © 2022 CPSC 349 Project 3</p>
+      <p class="text-white text-center">Copyright © 2022 CPSC 349 Project 3</p>
     </div>
   </footer>
 </body>
