@@ -3,13 +3,3 @@
 @tailwind utilities;
 
 /* CUSTOM STYLES BELOW */
-
-@layer base {
-
-    main {
-        min-height: 500px;
-        height: calc(100vh - 150px);
-        min-width: 500px;
-        width: 100%;
-    }
-}
