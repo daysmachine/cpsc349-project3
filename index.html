@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="w-full h-full overflow-x-hidden">
+<html lang="en" class="w-full h-full overflow-x-hidden" data-theme="dark">
 
 <head>
   <meta charset="UTF-8">
@@ -10,47 +10,61 @@
   <script type="module" src="main.js"></script>
 </head>
 
-<body class="bg-gray-800 w-full h-full">
+<body class="w-full h-full">
   <article class="min-h-full flex flex-col items-stretch">
 
-    <header class="h-1/6 shrink-0">
-      <h1 class="font-medium leading-tight text-4xl mt-0 mb-2 text-white  flex justify-center">TicTacToe</h1>
-      <h2 class="font-medium leading-tight text-1xl mt-0 mb-2 text-white flex justify-center">
-        Group Members:&nbsp;<a href="https://github.com/daysmachine">Daisy Catalan</a>,&nbsp;<a
-          href="https://github.com/nicholascsuf">Nicholas Harney</a>,&nbsp;<a href="https://github.com/anan93636369">Jin
-          Lu</a>,&nbsp;<a href="https://github.com/Peekoe">Charlie Taylor</a>
-      </h2>
+    <header class="navbar bg-neutral text-neutral-content shrink-0">
+      <div class="navbar-start">
+        <h1><a class="btn btn-ghost normal-case text-xl">TicTacToe</a></h1>
+      </div>
+
+      <div class="navbar-end">
+        <!-- The button to open modal -->
+        <label for="my-modal-4" class="btn">TEAM 10</label>
+
+        <!-- Put this part before </body> tag -->
+        <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+        <label for="my-modal-4" class="modal cursor-pointer">
+          <span class="modal-box flex flex-col items-center bg-neutral text-neutral-content">
+            <span class="text-lg font-bold">Group Members</span>
+            <span class="py-4 "><a href="https://github.com/daysmachine">Daisy Catalan</a></span>
+            <span class="py-4"><a href="https://github.com/nicholascsuf">Nicholas Harney</a></span>
+            <span class="py-4"><a href="https://github.com/anan93636369">Jin Lu</a></span>
+            <span class="py-4"><a href="https://github.com/Peekoe">Charlie Taylor</a></span>
+          </span>
+        </label>
+      </div>
     </header>
 
-    <main class="flex justify-center items-center flex-col font-sans h-96 w-96 min-h-full min-w-full grow shrink-0">
+    <div class="flex justify-center items-center flex-col font-sans h-96 w-96 min-h-full min-w-full grow shrink-0">
       <div id="board" class="flex justify-center items-center w-3/4 h-3/4 no-shrink">
-        <div class="grid grid-cols-3 grid-rows-3 gap-3 w-full h-full text-3xl text-white p-4">
-          <button id="0" class="bg-red-500 rounded-md"></button>
-          <button id="1" class="bg-red-500 rounded-md"></button>
-          <button id="2" class="bg-red-500 rounded-md"></button>
-          <button id="3" class="bg-red-500 rounded-md"></button>
-          <button id="4" class="bg-red-500 rounded-md"></button>
-          <button id="5" class="bg-red-500 rounded-md"></button>
-          <button id="6" class="bg-red-500 rounded-md"></button>
-          <button id="7" class="bg-red-500 rounded-md"></button>
-          <button id="8" class="bg-red-500 rounded-md"></button>
+        <div class="grid grid-cols-3 grid-rows-3 gap-3 w-full h-full text-3xl text-primary-content p-4">
+          <button id="0" class="tic-tac-toe-tile bg-primary rounded-md"></button>
+          <button id="1" class="tic-tac-toe-tile bg-primary rounded-md"></button>
+          <button id="2" class="tic-tac-toe-tile bg-primary rounded-md"></button>
+          <button id="3" class="tic-tac-toe-tile bg-primary rounded-md"></button>
+          <button id="4" class="tic-tac-toe-tile bg-primary rounded-md"></button>
+          <button id="5" class="tic-tac-toe-tile bg-primary rounded-md"></button>
+          <button id="6" class="tic-tac-toe-tile bg-primary rounded-md"></button>
+          <button id="7" class="tic-tac-toe-tile bg-primary rounded-md"></button>
+          <button id="8" class="tic-tac-toe-tile bg-primary rounded-md"></button>
         </div>
       </div>
 
       <button id="start" type="button"
-        class="mb-2 w-1/2 inline-block px-6 py-2.5 bg-red-600 text-red-200 font-medium text-xs leading-normal uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out">
+        class="mb-3 w-1/2 inline-block px-6 py-2 font-medium text-xs md:text-2xl leading-normal uppercase rounded btn btn-primary">
         Start Game
       </button>
       <button id="reset" type="button"
-        class="w-1/2 inline-block px-6 py-2 border-2 border-red-600 bg-red-200 text-red-600 font-medium text-xs leading-normal uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
+        class="w-1/2 inline-block px-6 py-2 font-medium text-xs md:text-2xl leading-normal uppercase rounded btn btn-secondary">
         Reset Game
       </button>
 
-    </main>
+    </div>
 
-    <footer class="footer footer-center p-4 bg-base-300 text-base-content shrink-0">
+    <footer class="footer footer-center p-4 bg-base-300 text-base-content mt-4 shrink-0">
       <div>
-        <p class="text-white text-center">Copyright © 2022 CPSC 349 Project 3</p>
+        <p>Copyright © 2022 CPSC 349 Project 3</p>
       </div>
     </footer>
 
