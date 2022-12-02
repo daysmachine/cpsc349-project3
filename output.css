@@ -528,6 +528,10 @@ main {
   margin-bottom: 0.5rem;
 }
 
+.mt-4 {
+  margin-top: 1rem;
+}
+
 .inline-block {
   display: inline-block;
 }
