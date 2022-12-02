@@ -85,7 +85,7 @@ function startGame () {
 }
 
 function endGame (winner) {
-  window.alert(`Player ${winner == 1 ? 'X' : 'O'} wins`)
+  window.alert(`Player ${winner === 1 ? 'X' : 'O'} wins`)
   clearBoard()
   enableBoard(false)
 }
