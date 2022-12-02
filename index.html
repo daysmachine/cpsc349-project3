@@ -8,6 +8,7 @@
   <title>TicTac Toe Game</title>
   <link href="output.css" rel="stylesheet">
   <script type="module" src="main.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 </head>
 
 <body class="w-full h-full">
@@ -15,7 +16,7 @@
 
     <header class="navbar bg-neutral text-neutral-content shrink-0">
       <div class="navbar-start">
-        <h1><a class="btn btn-ghost normal-case text-xl">TicTacToe</a></h1>
+        <h1><a href="https://daysmachine.github.io/cpsc349-project3/" class="btn btn-ghost normal-case text-xl">TicTacToe</a></h1>
       </div>
 
       <div class="navbar-end">
@@ -59,6 +60,39 @@
         class="w-1/2 inline-block px-6 py-2 font-medium text-xs md:text-2xl leading-normal uppercase rounded btn btn-secondary">
         Reset Game
       </button>
+
+      <select data-choose-theme class="mt-5 select select-bordered select-primary text-xs md:text-1xl border-2">
+        <option disabled="disabled" selected="selected">Choose a theme</option>
+        <option value="acid">Acid</option>
+        <option value="aqua">Aqua</option>
+        <option value="autumn">Autumn</option>
+        <option value="black">Black</option>
+        <option value="bumblebee">Bumblebee</option>
+        <option value="business">Business</option>
+        <option value="cmyk">CMYK</option>
+        <option value="coffee">Coffee</option>
+        <option value="corporate">Corporate</option>
+        <option value="cupcake">Cupcake</option>
+        <option value="cyberpunk">Cyberpunk</option>
+        <option value="dark">Dark</option>
+        <option value="dracula">Dracula</option>
+        <option value="emerald">Emerald</option>
+        <option value="fantasy">Fantasy</option>
+        <option value="forest">Forest</option>
+        <option value="garden">Garden</option>
+        <option value="halloween">Halloween</option>
+        <option value="lemonade">Lemonade</option>
+        <option value="light">Light</option>
+        <option value="lofi">Lofi</option>
+        <option value="luxury">Luxury</option>
+        <option value="night">Night</option>
+        <option value="pastel">Pastel</option>
+        <option value="retro">Retro</option>
+        <option value="synthwave">Synthwave</option>
+        <option value="valentine">Valentine</option>
+        <option value="winter">Winter</option>
+        <option value="wireframe">Wireframe</option>
+      </select>
 
     </div>
 
