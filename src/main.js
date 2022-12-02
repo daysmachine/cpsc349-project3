@@ -2,15 +2,16 @@ let playerTurn = true
 let disable = true
 
 function clicked (event) {
-  const button = event.originalTarget
+  const button = event.target;
 
   if (button.textContent !== 'X' && button.textContent !== 'O') {
     button.textContent = playerTurn ? 'X' : 'O'
-    playerTurn = !playerTurn
+    playerTurn = !playerTurn;
+    //playerTurn
+    localStorage.__PLAYERTURN__ = playerTurn;
     checkWinner()
   }
 }
-
 function checkWinner () {
   const board = document.getElementById('board').querySelectorAll('.bg-red-500')
   const states = []
@@ -28,6 +29,8 @@ function checkWinner () {
       }
     }
   }
+
+  localStorage.__GAMESTATES__ = states.join(",");
 
   for (let i = 0; i < 3; i++) {
     if (checkLine(states[i])) {
@@ -68,11 +71,14 @@ function enableBoard (bool) {
   }
 }
 
+// clear
 function clearBoard () {
   const board = document.getElementById('board').querySelectorAll('.bg-red-500')
   board.forEach(s => { s.textContent = '' })
+  // clear storage
+  localStorage.__GAMESTATES__ = "";
+  localStorage.__PLAYERTURN__ = "";
 }
-
 function startGame () {
   enableBoard(true)
 }
@@ -83,6 +89,7 @@ function endGame (winner) {
   enableBoard(false)
 }
 
+//reset
 function resetGame () {
   clearBoard()
   enableBoard(true)
@@ -100,3 +107,23 @@ const reset = document.getElementById('reset')
 
 start.addEventListener('click', startGame)
 reset.addEventListener('click', resetGame)
+
+//determine whether should restore the game status when reopen/refresh the web browser
+if(localStorage.__GAMESTATES__&&localStorage.__PLAYERTURN__){
+
+  playerTurn = JSON.parse(localStorage.__PLAYERTURN__);
+
+  let gameStates = localStorage.__GAMESTATES__;
+  gameStates = gameStates.split(",");
+
+  let buttons = document.getElementsByClassName("rounded-md");
+  
+  for (let i = 0; i < gameStates.length; i++) {
+    if(gameStates[i] == 1){
+      buttons[i].textContent = "X";
+    }else if(gameStates[i]==0){
+      buttons[i].textContent = "O";
+    }
+  }
+  startGame();
+}
