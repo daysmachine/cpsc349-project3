@@ -119,9 +119,9 @@ if (localStorage.__GAMESTATES__ && localStorage.__PLAYERTURN__) {
   const buttons = document.getElementsByClassName('rounded-md')
 
   for (let i = 0; i < gameStates.length; i++) {
-    if (gameStates[i] === 1) {
+    if (Number(gameStates[i]) === 1) {
       buttons[i].textContent = 'X'
-    } else if (gameStates[i] === 0) {
+    } else if (Number(gameStates[i]) === 0) {
       buttons[i].textContent = 'O'
     }
   }
