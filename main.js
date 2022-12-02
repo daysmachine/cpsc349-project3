@@ -14,7 +14,7 @@ function clicked (event) {
   }
 }
 function checkWinner () {
-  const board = document.getElementById('board').querySelectorAll('.bg-red-500')
+  const board = document.getElementById('board').querySelectorAll('.tic-tac-toe-tile')
   const states = []
 
   for (let i = 0; i < 3; i++) {
@@ -66,7 +66,7 @@ function checkLine (line) {
 }
 
 function enableBoard (bool) {
-  const buttons = document.getElementById('board').querySelectorAll('.bg-red-500')
+  const buttons = document.getElementById('board').querySelectorAll('.tic-tac-toe-tile')
   for (const button of buttons) {
     button.disabled = !bool
   }
@@ -74,7 +74,7 @@ function enableBoard (bool) {
 
 // clear
 function clearBoard () {
-  const board = document.getElementById('board').querySelectorAll('.bg-red-500')
+  const board = document.getElementById('board').querySelectorAll('.tic-tac-toe-tile')
   board.forEach(s => { s.textContent = '' })
   // clear storage
   localStorage.__GAMESTATES__ = ''
@@ -96,7 +96,7 @@ function resetGame () {
   enableBoard(true)
 }
 
-const buttons = document.getElementById('board').querySelectorAll('.bg-red-500')
+const buttons = document.getElementById('board').querySelectorAll('.tic-tac-toe-tile')
 
 for (const button of buttons) {
   button.addEventListener('click', clicked)
@@ -116,7 +116,7 @@ if (localStorage.__GAMESTATES__ && localStorage.__PLAYERTURN__) {
   let gameStates = localStorage.__GAMESTATES__
   gameStates = gameStates.split(',')
 
-  const buttons = document.getElementsByClassName('rounded-md')
+  const buttons = document.getElementsByClassName('tic-tac-toe-tile')
 
   for (let i = 0; i < gameStates.length; i++) {
     if (Number(gameStates[i]) === 1) {
